@@ -2596,7 +2596,7 @@ input, select, textarea {
 		background-image: url("images/overlay.png"), url("../../images/bg.jpg");
 		background-position: top left,							top left;
 		background-repeat: repeat,								no-repeat;
-		background-size: auto,								150%;
+		background-size: auto,								75%;
 		color: rgba(255, 255, 255, 0.5);
 		height: 100%;
 		left: 0;
@@ -2604,7 +2604,7 @@ input, select, textarea {
 		position: fixed;
 		text-align: right;
 		top: 0;
-		width: 35%;
+		width: 25%;
 	}
 
 		#header > * {
@@ -2682,10 +2682,10 @@ input, select, textarea {
 /* Main */
 
 	#main {
-		margin-left: 35%;
+		margin-left: 25%;
 		max-width: 54em;
 		padding: 8em 4em 4em 4em;
-		width: calc(100% - 35%);
+		width: calc(100% - 25%);
 	}
 
 		#main > section {
@@ -3225,4 +3225,465 @@ input, select, textarea {
 }
 #message {
   resize: none;
+}
+
+/* =========================================================
+   OVERRIDE
+   ========================================================= */
+
+/* ---------- Color theme ---------- */
+
+body {
+    background: #2a211d;
+}
+
+body,
+input,
+select,
+textarea {
+    color: #e7ddd5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong,
+b {
+    color: #fff4ea;
+}
+
+header p {
+    color: #d0c1b7;
+}
+
+a {
+    color: #71d6b5;
+}
+
+a:hover {
+    color: #9be8ce !important;
+}
+
+hr,
+table thead,
+table tfoot,
+#main > section,
+blockquote,
+.box {
+    border-color: rgba(255, 244, 234, 0.18);
+}
+
+blockquote {
+    border-left-color: rgba(255, 244, 234, 0.18);
+}
+
+code,
+table tbody tr:nth-child(2n + 1) {
+    background-color: #382b25;
+}
+
+table tbody tr {
+    border-color: rgba(255, 244, 234, 0.18);
+}
+
+table th,
+label {
+    color: #fff4ea;
+}
+
+/* ---------- Forms ---------- */
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+select,
+textarea {
+    background: #382b25;
+    border-color: rgba(255, 244, 234, 0.12);
+    color: #fff4ea;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+select:focus,
+textarea:focus {
+    border-color: #71d6b5;
+}
+
+input[type="checkbox"] + label,
+input[type="radio"] + label {
+    color: #e7ddd5;
+}
+
+input[type="checkbox"] + label:before,
+input[type="radio"] + label:before {
+    background: #382b25;
+    border-color: rgba(255, 244, 234, 0.12);
+}
+
+input[type="checkbox"]:checked + label:before,
+input[type="radio"]:checked + label:before {
+    background: #71d6b5;
+    border-color: #71d6b5;
+    color: #211b18;
+}
+
+::-webkit-input-placeholder {
+    color: #bbaaa0 !important;
+}
+
+:-moz-placeholder {
+    color: #bbaaa0 !important;
+    opacity: 1.0;
+}
+
+::-moz-placeholder {
+    color: #bbaaa0 !important;
+    opacity: 1.0;
+}
+
+:-ms-input-placeholder {
+    color: #bbaaa0 !important;
+}
+
+/* ---------- Buttons ---------- */
+
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+.button {
+    background-color: transparent;
+    border-color: rgba(255, 244, 234, 0.35);
+    box-shadow: none;
+    color: #fff4ea !important;
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+input[type="button"]:hover,
+.button:hover {
+    border-color: #71d6b5;
+    color: #71d6b5 !important;
+}
+
+input[type="submit"]:active,
+input[type="reset"]:active,
+input[type="button"]:active,
+.button:active {
+    background-color: rgba(113, 214, 181, 0.12);
+}
+
+input[type="submit"].primary,
+input[type="reset"].primary,
+input[type="button"].primary,
+.button.primary {
+    background-color: #71d6b5;
+    border-color: #71d6b5;
+    color: #211b18 !important;
+}
+
+/* ---------- Popup ---------- */
+
+.poptrox-popup {
+    background: #2a211d;
+}
+
+.poptrox-popup .caption {
+    background: #382b25;
+    color: #fff4ea;
+}
+
+/* ---------- Thinner left overlay / sidebar ---------- */
+/* Desktop: shrink header and move main/footer to match */
+
+#header {
+    background-color: #3a2c26;
+    background-position: center center, center center;
+    background-size: auto, cover;
+    left: 0;
+    padding: 4.5em 2.2em;
+    position: fixed;
+    text-align: right;
+    top: 0;
+    width: 24em;
+}
+
+#header > .inner {
+    margin: 0 0 0 auto;
+    max-width: 18em;
+    width: 100%;
+}
+
+#header .image.avatar {
+    margin: 0 0 1.2em 0;
+    width: 8.5em;
+}
+
+#header h1 {
+    font-size: 1.05em;
+    line-height: 1.55em;
+    margin: 0;
+}
+
+#main {
+    margin-left: 24em;
+    max-width: calc(100% - 24em);
+    padding: 4.5em 4em 2.5em 4em;
+    width: calc(100% - 24em);
+}
+
+#footer {
+    bottom: 0;
+    left: 0;
+    padding: 2.5em 2.2em 1.5em 2.2em;
+    position: fixed;
+    text-align: right;
+    width: 24em;
+}
+
+/* ---------- Better icon layout ---------- */
+/* Make footer icons elegant and evenly spaced */
+
+#footer .icons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 0.9em 1em;
+    margin: 0;
+}
+
+#footer .icons li {
+    margin: 0;
+    padding: 0;
+}
+
+#footer .icons a {
+    align-items: center;
+    border-bottom: none;
+    color: rgba(255, 244, 234, 0.82);
+    display: inline-flex;
+    font-size: 1.2em;
+    height: 2.2em;
+    justify-content: center;
+    text-decoration: none;
+    width: 2.2em;
+}
+
+#footer .icons a:hover {
+    color: #71d6b5 !important;
+}
+
+#footer .copyright {
+    color: rgba(231, 221, 213, 0.7);
+    margin-top: 1.25em;
+}
+
+/* ---------- Large desktop ---------- */
+
+@media screen and (max-width: 1800px) {
+
+    #header {
+        padding: 4.25em 2em;
+        width: 22em;
+    }
+
+    #header > .inner {
+        max-width: 17em;
+    }
+
+    #main {
+        margin-left: 22em;
+        max-width: calc(100% - 22em);
+        padding: 4.25em 3.5em 2.25em 3.5em;
+        width: calc(100% - 22em);
+    }
+
+    #footer {
+        padding: 2.25em 2em 1.4em 2em;
+        width: 22em;
+    }
+}
+
+/* ---------- Laptop / medium desktop ---------- */
+
+@media screen and (max-width: 1280px) {
+
+    body,
+    input,
+    select,
+    textarea {
+        font-size: 14pt;
+    }
+
+    #header {
+        padding: 3.5em 1.7em;
+        width: 19em;
+    }
+
+    #header > .inner {
+        max-width: 15.5em;
+    }
+
+    #header .image.avatar {
+        width: 7.5em;
+    }
+
+    #main {
+        margin-left: 19em;
+        max-width: calc(100% - 19em);
+        padding: 3.5em 2.75em 2em 2.75em;
+        width: calc(100% - 19em);
+    }
+
+    #footer {
+        padding: 2em 1.7em 1.2em 1.7em;
+        width: 19em;
+    }
+
+    #footer .icons {
+        gap: 0.75em 0.85em;
+    }
+
+    #footer .icons a {
+        font-size: 1.1em;
+        height: 2.05em;
+        width: 2.05em;
+    }
+}
+
+/* ---------- Tablet / mobile layout ---------- */
+
+@media screen and (max-width: 980px) {
+
+    #header {
+        padding: 2.75em 1.5em;
+        position: relative;
+        text-align: center;
+        width: 100%;
+    }
+
+    #header > .inner {
+        max-width: 32em;
+        width: 100%;
+    }
+
+    #header .image.avatar {
+        margin: 0 auto 1em auto;
+        width: 6.75em;
+    }
+
+    #header h1 {
+        font-size: 1em;
+        line-height: 1.5em;
+    }
+
+    #main {
+        margin-left: 0;
+        max-width: 100%;
+        padding: 2.75em 2em 1.5em 2em;
+        width: 100%;
+    }
+
+    #footer {
+        padding: 2em 1.5em 1.25em 1.5em;
+        position: relative;
+        text-align: center;
+        width: 100%;
+    }
+
+    #footer .icons {
+        justify-content: center;
+        gap: 0.85em 1em;
+    }
+
+    #footer .icons a {
+        font-size: 1.15em;
+        height: 2.15em;
+        width: 2.15em;
+    }
+}
+
+/* ---------- Small mobile ---------- */
+
+@media screen and (max-width: 736px) {
+
+    #header {
+        padding: 2.25em 1.15em;
+    }
+
+    #header > .inner {
+        max-width: 100%;
+    }
+
+    #header .image.avatar {
+        width: 5.9em;
+    }
+
+    #header h1 {
+        font-size: 0.95em;
+        line-height: 1.45em;
+    }
+
+    #main {
+        padding: 2.1em 1.25em 1em 1.25em;
+    }
+
+    #main > section {
+        margin: 2.25em 0 0 0;
+        padding: 2.25em 0 0 0;
+    }
+
+    #footer {
+        padding: 1.6em 1em 1em 1em;
+    }
+
+    #footer .icons {
+        gap: 0.7em 0.8em;
+    }
+
+    #footer .icons a {
+        font-size: 1.05em;
+        height: 2em;
+        width: 2em;
+    }
+}
+
+/* ---------- Very small phones ---------- */
+
+@media screen and (max-width: 480px) {
+
+    #header {
+        padding: 1.9em 0.9em;
+    }
+
+    #header .image.avatar {
+        width: 5.2em;
+    }
+
+    #header h1 {
+        font-size: 0.9em;
+    }
+
+    #main {
+        padding: 1.8em 0.9em 0.8em 0.9em;
+    }
+
+    #footer {
+        padding: 1.35em 0.9em 0.85em 0.9em;
+    }
+
+    #footer .icons {
+        gap: 0.6em 0.7em;
+    }
+
+    #footer .icons a {
+        font-size: 1em;
+        height: 1.95em;
+        width: 1.95em;
+    }
 }
