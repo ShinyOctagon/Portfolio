@@ -3688,18 +3688,256 @@ input[type="button"].primary,
     }
 }
 
-/* FULL-WIDTH PORTFOLIO LAYOUT */
-html,body{width:100%;min-width:0;overflow-x:hidden}
-#header{position:relative;inset:auto;display:block;width:100%;height:auto;min-height:0;padding:4rem 0 3.5rem;text-align:center}
-#header>.inner,#header .container{width:100%;max-width:1180px;margin:0 auto;padding:0 2rem}.header-content{width:100%;max-width:1050px;margin:0 auto;text-align:center}
-#main{width:100%;max-width:1100px;margin:0 auto;padding:3.5rem 2rem}#main>section{width:100%}#one{max-width:760px;margin-left:auto;margin-right:auto}
-#footer{display:none}
-.header-icons,ul.header-icons.icons{display:flex;position:relative;width:100%;margin:2rem auto 0;padding:0;justify-content:center;align-items:center;flex-wrap:wrap;gap:clamp(1.4rem,4vw,3.5rem);background:transparent;border:0;box-shadow:none;list-style:none}.header-icons li{display:block;padding:0;margin:0}.header-icons li a{display:inline-block;width:auto;height:auto;padding:0;border:0;background:transparent;box-shadow:none;color:#707070;font-size:clamp(1.7rem,3vw,2.35rem);line-height:1}.header-icons li a:hover{color:#f1cb7c!important;transform:translateY(-4px) scale(1.06)}.header-icons .label{display:none}
-@media screen and (max-width:736px){#header{padding:3.5rem 0 3rem}#header>.inner,#header .container,#main{padding-left:1.5rem;padding-right:1.5rem}#main{padding-top:2.5rem}.header-icons{gap:1.6rem}.header-icons li a{font-size:1.65rem}}
+/* FULL-WIDTH PORTFOLIO LAYOUT — FIXED ICON HOVER */
+html, body {
+    width: 100%;
+    min-width: 0;
+    overflow-x: hidden;
+}
 
+#header {
+    position: relative;
+    inset: auto;
+    display: block;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    padding: 4rem 0 3.5rem;
+    text-align: center;
+}
+
+#header > .inner,
+#header .container {
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.header-content {
+    width: 100%;
+    max-width: 1050px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#main {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 3.5rem 2rem;
+}
+
+#main > section {
+    width: 100%;
+}
+
+#one {
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#footer {
+    display: none;
+}
+
+/* Icon bar */
+.header-icons,
+ul.header-icons.icons {
+    display: flex;
+    position: relative;
+    width: 100%;
+    margin: 2rem auto 0;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: clamp(1.4rem, 4vw, 3.5rem);
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+    list-style: none;
+}
+
+.header-icons li {
+    display: block;
+    padding: 0;
+    margin: 0;
+}
+
+/* Base icon link */
+.header-icons li a {
+    position: relative;
+    display: inline-block;
+    width: auto;
+    height: auto;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+    color: #707070;
+    font-size: clamp(1.7rem, 3vw, 2.35rem);
+    line-height: 1;
+    text-decoration: none;
+    transform: none;
+    transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+/* Hover: lift only, no rectangle fill */
+.header-icons li a:hover {
+    transform: translateY(-4px) scale(1.06);
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+/* Gradient on the icon glyph itself when hovered */
+.header-icons li a:hover .icon::before,
+.header-icons li a:hover i.icon::before {
+    background: linear-gradient(
+        135deg,
+        #f1cb7c 0%,
+        #e83b3a 50%,
+        #3aa58e 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    filter: none;
+}
+
+.header-icons .label {
+    display: none;
+}
+
+@media screen and (max-width: 736px) {
+    #header {
+        padding: 3.5rem 0 3rem;
+    }
+
+    #header > .inner,
+    #header .container,
+    #main {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+
+    #main {
+        padding-top: 2.5rem;
+    }
+
+    .header-icons {
+        gap: 1.6rem;
+    }
+
+    .header-icons li a {
+        font-size: 1.65rem;
+    }
+}
+/* -------------------------------------------------------
+   HEADER ICONS — GRADIENT HOVER, NO RECTANGLE FILL
+------------------------------------------------------- */
+
+/* Base icon link style */
+.header-icons li a {
+    position: relative !important;
+    display: inline-block !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    color: #707070 !important;
+    font-size: clamp(1.7rem, 3vw, 2.35rem) !important;
+    line-height: 1 !important;
+    text-decoration: none !important;
+    transform: none !important;
+    transition: transform 0.25s ease, filter 0.25s ease !important;
+}
+
+/* Ensure the icon glyph itself is what gets styled */
+.header-icons li a .icon,
+.header-icons li a i.icon {
+    display: inline-block !important;
+    background: transparent !important;
+    color: inherit !important;
+    filter: none !important;
+}
+
+/* Hover: lift slightly, no background rectangle */
+.header-icons li a:hover {
+    transform: translateY(-4px) scale(1.06) !important;
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+/* Gradient on hover, applied to the glyph via ::before */
+.header-icons li a:hover::before,
+.header-icons li a:hover .icon::before,
+.header-icons li a:hover i.icon::before {
+    background: linear-gradient(
+        135deg,
+        #f1cb7c 0%,
+        #e83b3a 50%,
+        #3aa58e 100%
+    ) !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    color: transparent !important;
+    filter: none !important;
+}
+
+/* Keep labels hidden */
+.header-icons .label {
+    display: none !important;
+}
 
 /* CRT HEADER */
 #header{overflow:hidden;isolation:isolate;background:radial-gradient(ellipse at 50% -20%,rgba(241,203,124,.12),transparent 52%),radial-gradient(ellipse at 16% 95%,rgba(232,59,58,.10),transparent 48%),radial-gradient(ellipse at 84% 80%,rgba(58,165,142,.09),transparent 45%),linear-gradient(135deg,#343037 0%,#29262d 48%,#1b191e 100%);border-bottom:1px solid rgba(241,203,124,.20);box-shadow:inset 0 -1px 0 rgba(232,59,58,.30)}
 #header::before{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:.58;background:repeating-linear-gradient(0deg,rgba(0,0,0,.28) 0,rgba(0,0,0,.28) 1px,transparent 1px,transparent 4px),linear-gradient(rgba(58,165,142,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(58,165,142,.035) 1px,transparent 1px);background-size:auto,54px 54px,54px 54px}
 #header::after{content:'';position:absolute;left:50%;bottom:-1px;z-index:1;width:min(280px,38vw);height:2px;transform:translateX(-50%);pointer-events:none;background:linear-gradient(90deg,transparent,#f1cb7c 24%,#e83b3a 50%,#f1cb7c 76%,transparent);box-shadow:0 0 16px rgba(241,203,124,.52),0 0 34px rgba(232,59,58,.25)}
 #header .header-content,#header .container,#header>.inner{position:relative;z-index:2}
+
+
+/* Left-align the animated pitch with the introduction text */
+.hero-pitch {
+    display: block;
+    width: 100%;
+    max-width: none;
+    margin: 0 0 1rem 0;
+    overflow: visible;
+    text-align: left;
+    white-space: nowrap;
+    font-size: clamp(0.72rem, 3vw, 2.2rem);
+    line-height: 1.35;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    color: #ece6df;
+}
+
+.pitch-line {
+    display: inline-flex;
+    align-items: baseline;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    width: max-content;
+    max-width: none;
+    white-space: nowrap;
+}
+
+.pitch-word {
+    display: inline-block;
+    flex: 0 0 auto;
+    margin-left: 0.25em;
+    white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+    .hero-pitch {
+        font-size: clamp(0.62rem, 3.7vw, 1.1rem);
+        letter-spacing: -0.055em;
+    }
+
+    .pitch-word {
+        margin-left: 0.18em;
+    }
+}
+
